@@ -1,0 +1,47 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/741035b037.js" crossorigin="anonymous"></script>
+  
+    
+    <link rel="stylesheet" href="{% static 'dynamicforms/style.css' %}">
+    <title>Form</title>
+</head>
+<body>
+    <div class="container jumbotron">
+        <form action="123" method="get" class="form">
+            {% for x in lists %}
+                {% if x == 'text' %}
+                    <input class="form-control" type="text" placeholder="Text"/><br>
+                {% endif %}
+                {% if x == 'textarea' %}
+                    <textarea class="form-control" placeholder="Text Area"></textarea><br>
+                {% endif %}
+                {% if x == 'button' %}
+                    <button class="btn btn-primary">Button</button><br>
+                {% endif %}
+                {% if x == 'radio' %}
+                    <input class="form-control" type="radio"/><br>
+                {% endif %}
+                {% if x == 'checkbox' %}
+                    <input class="form-control" type="checkbox"/><br>
+                {% endif %}
+                {% if x == 'email' %}
+                    <input class="form-control" type="email" placeholder="Email"/><br>
+                {% endif %}
+                {% if x == 'password' %}
+                    <input class="form-control" type="password" placeholder="Password"/><br>
+                {% endif %} 
+            {% endfor %}
+
+        </form>
+    </div>
+</body>
+</html>
